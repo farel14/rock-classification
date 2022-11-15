@@ -1,0 +1,35 @@
+{
+  "name": "demo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "build": "npx tsc",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/bin/www.js\"",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "~1.9.0",
+    "pg": "^8.8.0",
+    "pug": "2.0.0-beta11",
+    "sequelize": "^6.25.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.11.5",
+    "concurrently": "^7.5.0",
+    "mocha": "^5.1.1",
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.5.1",
+    "supertest": "^3.0.0",
+    "typescript": "^4.8.4"
+  }
+}
