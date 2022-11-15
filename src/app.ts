@@ -1,10 +1,11 @@
-import * as express from 'express';
-import * as bodyParser from 'body-parser';
-import * as errorhandler from 'strong-error-handler';
-import * as dotenv from 'dotenv';
-import * as cors from 'cors';
+import express from 'express';
+import bodyParser from 'body-parser';
+import errorhandler from 'strong-error-handler';
+import dotenv from 'dotenv';
+import cors from 'cors';
 import {movies} from './routes/movies';
 import {actors} from './routes/actors';
+import indexRouter from './routes';
 
 export const app = express();
 
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use('/', indexRouter);
 app.use('/movies', movies);
 app.use('/actors', actors);
 
