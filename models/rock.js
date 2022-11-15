@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
   Rock.init({
     shortName: DataTypes.STRING,
     fullName: DataTypes.STRING,
-    email: DataTypes.STRING,
     group: DataTypes.ENUM('igneous', 'sedimentary', 'metamorphic'),
     image: DataTypes.TEXT
   }, {

@@ -15,9 +15,6 @@ module.exports = {
       fullName: {
         type: Sequelize.STRING
       },
-      email: {
-        type: Sequelize.STRING
-      },
       group: {
         type: Sequelize.ENUM('igneous', 'sedimentary', 'metamorphic')
       },
