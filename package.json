@@ -12,6 +12,8 @@
     "@types/bluebird": "^3.5.26",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.16.2",
     "pg": "^8.8.0",
     "reflect-metadata": "^0.1.10",

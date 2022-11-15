@@ -1,10 +1,16 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as errorhandler from 'strong-error-handler';
+import * as dotenv from 'dotenv';
+import * as cors from 'cors';
 import {movies} from './routes/movies';
 import {actors} from './routes/actors';
 
 export const app = express();
+
+dotenv.config();
+
+app.use(cors());
 
 // middleware for parsing application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: true}));
