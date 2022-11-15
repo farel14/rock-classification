@@ -1,4 +1,4 @@
-import { Column, CreatedAt, Table, UpdatedAt, Model } from "sequelize-typescript";
+import { Column, CreatedAt, Table, UpdatedAt, Model, DataType } from "sequelize-typescript";
 
 enum RockGroup {
     Igneous = 'igneous',
@@ -15,7 +15,7 @@ export class Rock extends Model<Rock> {
   @Column
   fullName!: string;
 
-  @Column
+  @Column(DataType.TEXT)
   image?: string;
 
   @Column
