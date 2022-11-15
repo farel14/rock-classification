@@ -14,7 +14,7 @@ movies.post('/', async (req, res, next) => {
 
 movies.get('', async (req, res, next) => {
   try {
-    res.json(await Movie.scope(req.query['scope']).findAll());
+    res.json(await Movie.scope(req.query['scope'] as string).findAll());
   } catch (e) {
     next(e);
   }
@@ -22,7 +22,7 @@ movies.get('', async (req, res, next) => {
 
 movies.get('/:id', async (req, res, next) => {
   try {
-    const movie = await Movie.scope(req.query['scope']).findByPk(req.params['id']);
+    const movie = await Movie.scope(req.query['scope'] as string).findByPk(req.params['id']);
     res.json(movie);
   } catch (e) {
     next(e);

@@ -7,7 +7,6 @@ export const actors = Router();
 actors.post('/', async (req, res, next) => {
   try {
     const actor = await Actor.create(req.body);
-    console.log('joni')
     res.status(201).json(actor);
   } catch (e) {
     next(e);
@@ -27,7 +26,7 @@ actors.post('/:id/movies/:movieId', async (req, res, next) => {
 
 actors.get('', async (req, res, next) => {
   try {
-    res.json(await Actor.scope(req.query['scope']).findAll());
+    res.json(await Actor.scope(req.query['scope'] as string).findAll());
   } catch (e) {
     next(e);
   }
@@ -35,7 +34,7 @@ actors.get('', async (req, res, next) => {
 
 actors.get('/:id', async (req, res, next) => {
   try {
-    const actor = await Actor.scope(req.query['scope']).findByPk(req.params['id']);
+    const actor = await Actor.scope(req.query['scope'] as string).findByPk(req.params['id']);
     res.json(actor);
   } catch (e) {
     next(e);
