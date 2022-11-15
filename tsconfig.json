@@ -18,7 +18,8 @@
   },
   "include": [
     "src/**/*.ts",
-    "index.ts"
+    "index.ts",
+    "**/*.json"
   ],
   "exclude": [
     "node_modules"
