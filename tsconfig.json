@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2017",
     "module": "commonjs",
     "moduleResolution": "node",
     "experimentalDecorators": true,
@@ -12,7 +12,9 @@
     "pretty": true,
     "strictNullChecks": true,
     "skipLibCheck": true,
-    "strictPropertyInitialization": true
+    "strictPropertyInitialization": true,
+    "resolveJsonModule": true,
+    "allowJs": true
   },
   "include": [
     "src/**/*.ts",
