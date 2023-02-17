@@ -9,24 +9,24 @@ enum RockGroup {
 @Table
 export class Rock extends Model<Rock> {
 
-  @Column
+  @Column(DataType.STRING)
   shortName!: string;
 
-  @Column
+  @Column(DataType.STRING)
   fullName!: string;
 
   @Column(DataType.TEXT)
   image?: string;
 
-  @Column
+  @Column(DataType.STRING)
   group!: RockGroup;
 
   @CreatedAt
-  @Column
+  @Column(DataType.DATE)
   createdAt!: Date;
 
   @UpdatedAt
-  @Column
+  @Column(DataType.DATE)
   updatedAt!: Date;
 
 }

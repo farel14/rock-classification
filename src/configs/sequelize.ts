@@ -7,6 +7,6 @@ const config = require(__dirname + '/../configs/config.json')[env];
 
 export const sequelize = new Sequelize(config.database, config.username, config.password, {
   ...config,
-  models: [__dirname + '/models'],
+  models: [__dirname + '/../models'],
   dialectModule: pg
 });
