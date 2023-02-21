@@ -1,6 +1,6 @@
 import { Column, CreatedAt, Table, UpdatedAt, Model, DataType } from "sequelize-typescript";
 
-enum RockGroup {
+export enum RockGroup {
     Igneous = 'igneous',
     Sedimentary = 'sedimentary',
     Metamorphic = 'metamorphic',

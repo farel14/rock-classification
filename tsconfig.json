@@ -1,28 +1,29 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "noUnusedLocals": true,
-    "sourceMap": true,
-    "declaration": false,
-    "pretty": true,
-    "strictNullChecks": true,
-    "skipLibCheck": true,
-    "strictPropertyInitialization": true,
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "esModuleInterop": true,
-  },
-  "include": [
-    "src/**/*.ts",
-    "index.ts",
-    "**/*.json"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "target": "es2017",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noUnusedLocals": false,
+        "sourceMap": true,
+        "declaration": false,
+        "pretty": true,
+        "strictNullChecks": true,
+        "skipLibCheck": true,
+        "strictPropertyInitialization": true,
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "esModuleInterop": true,
+        "outDir": "./dist",
+    },
+    "include": [
+        "src/**/*.ts",
+        "index.ts",
+        "**/*.json"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }
