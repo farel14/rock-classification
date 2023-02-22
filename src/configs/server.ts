@@ -5,6 +5,7 @@ import {sequelize} from './sequelize';
 const port = process.env.PORT || 3000;
 
 (async () => {
+  // await sequelize.sync();
   await sequelize.sync({force: true});
 
   createServer(app)

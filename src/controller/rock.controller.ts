@@ -19,7 +19,7 @@ export class RockController {
       res.json(rockList)
     } catch (error) {
       // res.status(500);
-      console.error(error);
+      next(error);
     }
   }
 }

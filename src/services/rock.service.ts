@@ -8,7 +8,11 @@ export class RockService {
     return Rock.create(model);
   }
   static async upsertMany(model: RockType[]): Promise<Rock[]> {
-    return Rock.bulkCreate(model, { updateOnDuplicate: ["shortName"] });
+    return Rock.bulkCreate(model, { updateOnDuplicate: [
+      'fullName',
+      'image',
+      'group',
+    ] });
   }
   static async findOne(filter: WhereOptions): Promise<Rock | null> {
     return Rock.findOne({ where: filter });
