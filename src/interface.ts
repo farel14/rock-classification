@@ -1,5 +1,20 @@
-import { Model, ModelType } from "sequelize-typescript";
+import { Column, CreatedAt, DataType, IsUUID, Model, ModelType, PrimaryKey, UpdatedAt } from "sequelize-typescript";
 import { WhereOptions } from "sequelize/types";
+
+
+export class ModelAdditionalProperty {
+    @PrimaryKey
+    @Column
+    id!: number;
+
+    @CreatedAt
+    @Column(DataType.DATE)
+    createdAt!: Date;
+  
+    @UpdatedAt
+    @Column(DataType.DATE)
+    updatedAt!: Date;
+}
 
 // interface MyType {
 //     instanceMethod();
@@ -20,4 +35,14 @@ export function StaticImplements<T>() {
   return <U extends T>(constructor: U) => {
     constructor;
   };
+}
+
+export function applyMixins(derivedCtor: any, baseCtors: any[]) {
+    baseCtors.forEach(baseCtor => {
+        Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
+             if (name !== 'constructor') {
+                derivedCtor.prototype[name] = baseCtor.prototype[name];
+            }
+        });
+    }); 
 }

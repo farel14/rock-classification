@@ -1,4 +1,4 @@
-import { Rock, RockGroup } from "../models/Rock";
+import { RockModel, RockGroup } from "../models/Rock";
 
 const dataArray = [{
     shortName: 'a',
@@ -6,7 +6,7 @@ const dataArray = [{
     group: RockGroup.Igneous
 }]
 
-const seed = Rock.bulkCreate(dataArray, 
+const seed = RockModel.bulkCreate(dataArray, 
     {
         updateOnDuplicate: ["name"] 
     } )

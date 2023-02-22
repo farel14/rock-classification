@@ -1,4 +1,5 @@
-import { Column, CreatedAt, Table, UpdatedAt, Model, DataType } from "sequelize-typescript";
+import { Column, CreatedAt, Table, UpdatedAt, Model, DataType, ModelType, $GetType, ModelCtor } from "sequelize-typescript";
+import { applyMixins, ModelAdditionalProperty } from "../interface";
 
 export enum RockGroup {
     Igneous = 'igneous',
@@ -6,9 +7,15 @@ export enum RockGroup {
     Metamorphic = 'metamorphic',
 }
 
-@Table
-export class Rock extends Model<Rock> {
+export type RockType = {
+  shortName: string;
+  fullName: string;
+  image?: string;
+  group: RockGroup;
+}
 
+@Table
+export class Rock extends Model {
   @Column(DataType.STRING)
   shortName!: string;
 
@@ -20,13 +27,4 @@ export class Rock extends Model<Rock> {
 
   @Column(DataType.STRING)
   group!: RockGroup;
-
-  @CreatedAt
-  @Column(DataType.DATE)
-  createdAt!: Date;
-
-  @UpdatedAt
-  @Column(DataType.DATE)
-  updatedAt!: Date;
-
 }
