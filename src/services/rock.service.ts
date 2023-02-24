@@ -1,6 +1,7 @@
 import { WhereOptions } from "sequelize/types";
 import { StaticImplements, StaticServiceMethod } from "../interface";
 import { Rock, RockGroup, RockType } from "../models/Rock";
+import { rockSeeder } from "../seeders/rock.seeder";
 
 @StaticImplements<StaticServiceMethod>() /* this statement implements both normal interface & static interface */
 export class RockService {
@@ -24,20 +25,9 @@ export class RockService {
   }
   static async seed(): Promise<Rock[]> {
     const seedData = this.getSeedData();
-    return Rock.bulkCreate(seedData, { updateOnDuplicate: ["shortName"] });
+    return this.upsertMany(seedData);
   }
   static getSeedData(): RockType[] {
-    return [
-      {
-        shortName: "basalt",
-        fullName: "Basalt",
-        group: RockGroup.Igneous,
-      },
-      {
-        shortName: "sandstone",
-        fullName: "Sandstone",
-        group: RockGroup.Sedimentary,
-      },
-    ];
+    return rockSeeder;
   }
 }

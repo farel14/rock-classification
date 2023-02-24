@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "node --require ts-node/register index.ts",
-    "dev": "ts-node-dev --no-notify --exit-child index.ts"
+    "dev": "ts-node-dev --exit-child --respawn --transpile-only index.ts"
   },
   "author": "",
   "license": "ISC",
